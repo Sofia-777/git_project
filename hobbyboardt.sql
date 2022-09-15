@@ -1,0 +1,58 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 목요일-9월-15-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table HOBBYBOARDT
+--------------------------------------------------------
+
+  CREATE TABLE "SCOTT"."HOBBYBOARDT" 
+   (	"B_ID" NUMBER(4,0), 
+	"B_NAME" VARCHAR2(15 BYTE), 
+	"B_EMAIL" VARCHAR2(50 BYTE), 
+	"B_TITLE" VARCHAR2(80 BYTE), 
+	"B_CONTENT" VARCHAR2(3000 BYTE), 
+	"B_DATE" DATE, 
+	"B_HIT" NUMBER(5,0), 
+	"B_PWD" VARCHAR2(12 BYTE), 
+	"B_IP" VARCHAR2(15 BYTE), 
+	"B_REF" NUMBER(5,0), 
+	"B_STEP" NUMBER(5,0), 
+	"B_LEVEL" NUMBER(5,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into SCOTT.HOBBYBOARDT
+SET DEFINE OFF;
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (8,'qqqq','ffff','ffff','ffff',to_date('22/09/15','RR/MM/DD'),1,'f','192.168.200.166',8,0,0);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (2,'jej2854','bbbb','bbbb','bbbb',to_date('22/09/15','RR/MM/DD'),5,'b','192.168.200.166',2,0,0);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (3,'qqqq','qqqq','qqqq','qqqq',to_date('22/09/15','RR/MM/DD'),4,'q','192.168.200.166',3,0,0);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (5,'jej2854','rrrr','[답변]:qqqq','rrrr',to_date('22/09/15','RR/MM/DD'),6,'rrrr','192.168.200.166',3,1,1);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (6,'jej2854','ttttt','ttttt','tttt',to_date('22/09/15','RR/MM/DD'),2,'t','192.168.200.166',6,0,0);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (7,'qqqq','eeee','eeee','eeee',to_date('22/09/15','RR/MM/DD'),1,'e','192.168.200.166',7,0,0);
+Insert into SCOTT.HOBBYBOARDT (B_ID,B_NAME,B_EMAIL,B_TITLE,B_CONTENT,B_DATE,B_HIT,B_PWD,B_IP,B_REF,B_STEP,B_LEVEL) values (1,'jej2854','aaaa','aaaa','aaaa',to_date('22/09/15','RR/MM/DD'),2,'a','192.168.200.166',1,0,0);
+--------------------------------------------------------
+--  DDL for Index SYS_C007162
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SCOTT"."SYS_C007162" ON "SCOTT"."HOBBYBOARDT" ("B_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table HOBBYBOARDT
+--------------------------------------------------------
+
+  ALTER TABLE "SCOTT"."HOBBYBOARDT" ADD PRIMARY KEY ("B_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table HOBBYBOARDT
+--------------------------------------------------------
+
+  ALTER TABLE "SCOTT"."HOBBYBOARDT" ADD FOREIGN KEY ("B_NAME")
+	  REFERENCES "SCOTT"."HOBBYMEMBERT" ("H_UID") ENABLE;
